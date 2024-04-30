@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <div class="alert alert-primary" id="urlc" role="alert">
+        <h1>Your Short URL: 'http://127.0.0.1:8000/{{ chars }}'</h1> 
+    </div>
+    <div class="btn btn-info" >
+
+    <button id="btn1" onclick = "window.location.href='http://127.0.0.1:8000/{{ chars }}';">
+    Click to open
+</button></div>
+
+
+<div class="btn btn-info" >
+
+    <button onclick="myFunction()">Copy Url</button></div>
+    <script>
+        function myFunction() {
+          // Get the text field
+          console.log("strted");
+          var copyText = 'http://127.0.0.1:8000/{{ chars }}';
+          console.log(copyText);
+        
+          // Select the text field
+      
+          // Copy the text inside the text field
+          navigator.clipboard.writeText(copyText);
+          
+          // Alert the copied text
+          alert("Copied the text: " + copyText);
+        }
+        </script>
+</center>
+
+{% endblock content %}
